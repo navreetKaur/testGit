@@ -41,7 +41,7 @@ public class BinaryToDecimalCoverter {
 			System.out.println(result);
 		}
 		
-		
+		in.close();
 		
 
 	}
