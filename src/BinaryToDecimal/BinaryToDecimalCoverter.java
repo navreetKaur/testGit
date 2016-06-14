@@ -34,7 +34,11 @@ public class BinaryToDecimalCoverter {
 			int pow = 0;
 			while(number > 0) {
 		        int tmp = number % 10;
-		        result += Math.pow(2, pow)*tmp;
+		        int power = 1;
+		        for (int i = 1;i <= pow; i++) {
+		        	power *= 2;
+		        }
+		        result += power*tmp;
 		        pow++;
 		        number /= 10;
 		    }
