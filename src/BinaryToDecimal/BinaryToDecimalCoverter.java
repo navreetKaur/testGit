@@ -31,7 +31,6 @@ public class BinaryToDecimalCoverter {
 			System.out.println(binDec.reverse());
 		} else {
 			int result = 0;
-			int pow = 0;
 			int power = 1;
 			while(number > 0) {
 		        int tmp = number % 10;		        		        
