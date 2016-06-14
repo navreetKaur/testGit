@@ -1,3 +1,4 @@
+package WhatIfActivity;
 import java.util.Scanner;
 
 public class SalesRecord {
