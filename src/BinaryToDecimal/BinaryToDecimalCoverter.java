@@ -32,14 +32,11 @@ public class BinaryToDecimalCoverter {
 		} else {
 			int result = 0;
 			int pow = 0;
+			int power = 1;
 			while(number > 0) {
-		        int tmp = number % 10;
-		        int power = 1;
-		        for (int i = 1;i <= pow; i++) {
-		        	power *= 2;
-		        }
+		        int tmp = number % 10;		        		        
 		        result += power*tmp;
-		        pow++;
+		        power *= 2;	
 		        number /= 10;
 		    }
 			System.out.println(result);
