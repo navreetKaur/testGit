@@ -35,12 +35,13 @@ public class Zork {
 		while (!temp.equals("Q")) {
 			String vals[] = zork[i][j].split(",");
 			String currentRoom = vals[0];
+			total += Integer.parseInt(vals[3]);
 			if (currentRoom.equals(""+chor)) {
 				total =0;
 				System.out.println("You met chor and Lost all your winnings!");
 				chor = rnd.nextInt(8) + 1;
 			}
-			total += Integer.parseInt(vals[3]);
+			
 			zork[i][j] = vals[0] + "," + vals[1] + "," + vals[2] + "," + "0";
 			if (!special) {
 				System.out.println("You are standing in the " + vals[1] + ".");
