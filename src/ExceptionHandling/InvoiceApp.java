@@ -67,21 +67,7 @@ public class InvoiceApp {
 			System.out.println("Security Exception thrown");
 		} catch (UnsupportedOperationException e) {
 			System.out.println("Unsupported Operation Exception thrown");
-		} /*catch (ClassNotFoundException e) {
-			System.out.println("Class Not Found Exception thrown");
-		} catch (CloneNotSupportedException e) {
-			System.out.println("Clone Not Supported Exceptionthrown");
-		} catch (IllegalAccessException e) {
-			System.out.println("Illegal Access Exception thrown");
-		} catch (InstantiationException e) {
-			System.out.println("Instantiation Exception thrown");
-		}catch (InterruptedException e) {
-			System.out.println("Interrupted Exception thrown");
-		} catch (NoSuchFieldException e) {
-			System.out.println("No Such Field Exception thrown");
-		} catch (NoSuchMethodException e) {
-			System.out.println("No Such Method Exception thrown");
-		}*/ catch (Exception e) {
+		}  catch (Exception e) {
 			System.out.println("General Exception thrown");
 		} finally {
 			in.close();
