@@ -1,0 +1,4 @@
+ZorkHistory
+Room Visited2 and Winnings: 0
+Room Visited4 and Winnings: 1000
+Room Visited7 and Winnings: 600
