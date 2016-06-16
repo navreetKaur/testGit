@@ -1,4 +1,14 @@
 ZorkHistory
-Room Visited2 and Winnings: 0
-Room Visited4 and Winnings: 1000
-Room Visited7 and Winnings: 600
+Room Visited 2 and Winnings: 0
+Room Visited 3 and Winnings: 800
+You got a Lamp
+Room Visited 3 and Winnings: 0
+Room Visited 2 and Winnings: 0
+Room Visited 4 and Winnings: 1000
+Room Visited 4 and Winnings: 0
+Room Visited 2 and Winnings: 0
+Room Visited 3 and Winnings: 0
+Room Visited 5 and Winnings: 50
+Yot got gift card
+Room Visited 5 and Winnings: 0
+Room Visited 5 and Winnings: 0

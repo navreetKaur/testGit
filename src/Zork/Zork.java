@@ -43,7 +43,9 @@ public class Zork {
 			int total = 0;
 			int rooms = 1;
 			Random rnd = new Random();
-			int chor = rnd.nextInt(8) + 1;
+			int chor = rnd.nextInt(7) + 1;
+			int lamp = rnd.nextInt(7) + 1;
+			boolean lampFlag = false;
 			while (!temp.equals("Q")) {
 				String vals[] = zork[i][j].split(",");
 				String currentRoom = vals[0];
@@ -119,11 +121,22 @@ public class Zork {
 
 					}
 				}
+				if (currentRoom.equals(""+lamp)) {
+					System.out.print(" or press GetLamp");
+					
+				} 
+				if (currentRoom.equals(""+5) && lampFlag) {
+					System.out.print(" or press GetCard ");
+				} else if (currentRoom.equals(""+3) && lampFlag) {
+					System.out.print(" or press ReadScroll ");
+				}
 
 				System.out.println(" or press Q to quit or type History to get history}");
 				temp = in.next();
 
-				if (!temp.equals("Q") && !temp.equals("History")) {
+				if (!temp.equals("Q") && !temp.equals("History") && !temp.equals("GetLamp") 
+						&& !temp.equals("ReadScroll") && !temp.equals("GetCard")) {
+					System.out.println(temp);
 					rooms++;
 					if (!currentRoom.equals("6")) {
 						String[] indexes = options.get(temp).split(",");
@@ -133,6 +146,29 @@ public class Zork {
 
 				} else if (temp.equals("Q")) {
 					break;
+				} else if (temp.equals("GetLamp")) {
+					lampFlag = true;
+					bwr.write("You got a Lamp\n");
+					String update[] = zork[0][0].split(",");
+					zork[0][0] = update[0] + "," + update[1] + "," + " a dusty box with a gift card" + "," + update[3];
+					update = zork[0][1].split(",");
+					zork[0][1] = update[0] + "," + update[1] + "," + update[2] + " and bats" + "," + update[3];
+					update = zork[0][2].split(",");
+					zork[0][2] = update[0] + "," + update[1] + "," + update[2] + " and SRK portrait with tickets to Conjuring2" + "," + update[3];
+					update = zork[1][0].split(",");
+					zork[1][0] = update[0] + "," + update[1] + "," + update[2] + " and a scroll on the wall" + "," + update[3];
+					update = zork[1][1].split(",");
+					zork[1][1] = update[0] + "," + update[1] + "," + update[2] + " and sheet music for Blank Space" + "," + update[3];
+					update = zork[1][2].split(",");
+					zork[1][2] = update[0] + "," + update[1] + "," + update[2] + " and refrigerator full of sweets and ice cream" + "," + update[3];
+					update = zork[2][1].split(",");
+					zork[2][1] = update[0] + "," + update[1] + "," + update[2] + " and a spider web of gold and silver" + "," + update[3];
+				} else if (temp.equals("GetCard")) {
+					bwr.write("Yot got gift card\n");
+				} else if (temp.equals("ReadScroll")) {
+					j = 2;
+					i = 0;
+					special = true;
 				} else {
 					bwr.flush();
 					bwr.close();
@@ -151,6 +187,7 @@ public class Zork {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
