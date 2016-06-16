@@ -23,6 +23,7 @@ public class Division {
 			  System.out.println(e.getMessage());
 		  } finally {
 			input.close();
+			System.out.println("finally block will execute.");
 		}
 		  
 		 
