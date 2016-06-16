@@ -3,6 +3,7 @@ package Zork;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,12 +14,16 @@ import java.util.Scanner;
 
 public class Zork {
 
+	static Random rnd = new Random();
 	public static void main(String[] args) {
+		FileWriter fwr = null;
+		BufferedWriter bwr = null;
+		Scanner in = null;
 		try {
 			File file = new File("zorkHistory.txt");
 			file.createNewFile();
-			FileWriter fwr = new FileWriter(file, true);
-			BufferedWriter bwr = new BufferedWriter(fwr);
+			fwr = new FileWriter(file, true);
+			bwr = new BufferedWriter(fwr);
 			bwr.write("ZorkHistory\n");
 			String[][] zork = new String[3][3];
 
@@ -32,7 +37,7 @@ public class Zork {
 			zork[2][1] = "1,foyer,dead scorpion,10";
 			zork[2][2] = "0";
 
-			Scanner in = new Scanner(System.in);
+			in = new Scanner(System.in);
 			System.out.println("You are standing in the foyer of an old house.");
 			System.out.println("You see a dead scorpion.");
 			System.out.println("{You can (1)exit to the north or press Q to quit or type History to get history}");
@@ -180,31 +185,55 @@ public class Zork {
 			}
 			System.out.println("Sorry to see you go!");
 			System.out.println("Winnings: " + total + " and Total Rooms: " + rooms);
-			in.close();
-			bwr.flush();
-			bwr.close();
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
 		} catch (IOException e) {
-			System.out.println(e.getMessage());
+			System.out.println("I/O Exception");
+		} catch (NullPointerException e) {
+			System.out.println("Null Exception");
+		} catch (ArithmeticException e) {
+			System.out.println("Arithematic Exception");
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Something went wrong");
 			e.printStackTrace();
+		} finally {
+			in.close();
+			try {
+				bwr.flush();
+				bwr.close();
+			} catch (IOException e) {
+				System.out.println("I/O Exception");
+			} catch (Exception e) {
+				System.out.println("Something went wrong");
+			}
+			
 		}
 	}
 
 	private static void history(File file) {
+		BufferedReader br = null;
 		try {
 			FileReader fr = new FileReader(file);
-			BufferedReader br = new BufferedReader(fr);
+			br = new BufferedReader(fr);
 			String line;
 			while ((line = br.readLine()) != null) {
 				System.out.println(line);
 			}
-			br.close();
+			
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				System.out.println("I/O Exception");
+			} catch (Exception e) {
+				System.out.println("Something went wrong");
+			}
 		}
 
 	}
