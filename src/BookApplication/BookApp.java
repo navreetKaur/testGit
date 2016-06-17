@@ -4,8 +4,8 @@ public class BookApp {
 	public static void main(String[] args) {
 		Book book = new Book();
 		book.getDisplayText();
-		Book bookAp = new Book("Julius Ceaser", "Shakespear", "Drama and History", 300, 6, "Jul109");
-		bookAp.getDisplayText();
+		Book bookAp = new Book("Julius Ceaser", "Shakespear", "Drama and History", 300, 6/*, "Jul109"*/);
+		System.out.println(bookAp.getDisplayText());
 		System.out.println();
 		System.out.println("Price of 5 books: " + book.getCopyPrice(5));
 		
@@ -13,7 +13,7 @@ public class BookApp {
 		dataBase.createBookDatabase();
 		System.out.println();
 		System.out.println("---------database Search---------");
-		dataBase.getBook("Java1001").getDisplayText();
+		System.out.println(dataBase.getBook("Java1001").getDisplayText());
 	}
 
 }
