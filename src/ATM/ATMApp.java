@@ -73,9 +73,9 @@ public class ATMApp {
 		}
 		
 	}
-	private static void lock(Account selected) throws Exception{
+	private static void lock(Account selected) throws Exception{		
 		int countLock = selected.getIncorrectCount();
-		if (countLock == 3)
+		if (countLock == 2 || selected.isLock())
 			selected.setLock(true);
 		else
 			selected.setIncorrectCount(countLock +1);
