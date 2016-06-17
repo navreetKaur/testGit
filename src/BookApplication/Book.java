@@ -4,6 +4,7 @@ public class Book {
 	private String title,author,description;
 	private double price;
 	private int copies;
+	private String SKU;
 	
 	public Book() {
 		title = "Harry Potter";
@@ -11,21 +12,22 @@ public class Book {
 		description = "Magic, Fantacy and Suspence thriller";
 		price = 100;
 		copies = 10;
-				
+		SKU = "Nav101";		
 	}
 	
-	public Book(String title, String author, String description, int price, int  copies) {
+	public Book(String title, String author, String description, double price, int  copies, String SKU) {
 		this.title = title;
 		this.author = author;
 		this.description = description;
 		this.price = price;
 		this.copies = copies;
-				
+		this.SKU = SKU;		
 	}
 	
 	public void getDisplayText () {
 		System.out.println("Title: '" + title + "' Author: '" + author + "'\n"
-				+ " Description: '" + description + "' Price: '" + price + "' Copies In Stock " + copies);
+				+ " Description: '" + description + "' Price: '" + price 
+				+ "' Copies In Stock " + copies + "SKU Code: '" + SKU + "'");
 	}
 	
 	public double getCopyPrice(int numberRequested) {
@@ -72,6 +74,14 @@ public class Book {
 
 	public void setCopies(int copies) {
 		this.copies = copies;
+	}
+
+	public String getSKU() {
+		return SKU;
+	}
+
+	public void setSKU(String sKU) {
+		SKU = sKU;
 	}
 	
 	
