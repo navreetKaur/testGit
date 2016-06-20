@@ -111,7 +111,7 @@ public class DateUtility {
 		Calendar dayOne = (Calendar) cal1.clone(),
 	            dayTwo = (Calendar) cal2.clone();
 		long DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
-		return ((int) ((cal1.getTime()) - cal2.getTime())/ DAY_IN_MILLIS));
+		//return ((int) ((cal1.getTime()) - cal2.getTime())/ DAY_IN_MILLIS));
 	    if (dayOne.get(Calendar.YEAR) == dayTwo.get(Calendar.YEAR)) {
 	        return Math.abs(dayOne.get(Calendar.DAY_OF_YEAR) - dayTwo.get(Calendar.DAY_OF_YEAR));
 	    } else {
