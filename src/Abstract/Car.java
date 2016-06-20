@@ -3,26 +3,34 @@ package Abstract;
 public final class Car extends Vehicle{
 	private String model;
 	
+	public Car() {
+		model = "Honda Civic";
+	}
+	
 	public Car(String model) {
 		this.model = model;
 	}
 
 	@Override
-	public void run() {
-		System.out.println(model + " is running");
+	public String run() {
+		return (model + " is running");
 		
 	}
 
 	@Override
-	public void stop() {
-		System.out.println(model + " is stopping");
+	public String stop() {
+		return (model + " is stopping");
 		
 	}
 
 	@Override
-	public void accelerate() {
-		System.out.println(model + " is accelerating");
+	public String accelerate() {
+		return (model + " is accelerating");
 		
+	}
+	
+	public String setSpeed(double speed) {
+		return "The Speed is "+ speed +" mph";
 	}
 
 }
