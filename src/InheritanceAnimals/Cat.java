@@ -13,5 +13,15 @@ public class Cat extends Animal{
 		System.out.println("--And cat sleeps in night");
 		
 	}
+	@Override
+	public String toString() {
+		return("My Kitty name is Mr. Puss");
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return false;
+	}
+	
 
 }

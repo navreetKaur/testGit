@@ -10,6 +10,8 @@ public class AnimalApp {
 		Cat c = new Cat();
 		c.eat();
 		c.sleep();
+		System.out.println(c.toString());
+		c.equals(c);
 
 		Bird b = new Bird();
 		b.eat();
