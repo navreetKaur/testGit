@@ -1,4 +1,4 @@
-package DateDisplay;
+package dateUtility;
 
 import dateUtility.DateUtility;
 
