@@ -12,8 +12,6 @@ public class DisplayDate {
 		System.out.println("Please enter the year");
 		int year = in.nextInt(); 
 
-
-
 		in.close();
 
 			printCalendarMonthYear(month, year);
