@@ -1,5 +1,6 @@
 package HashMap;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -8,6 +9,15 @@ public class Map {
 		
 		try {
 			HashMap<Integer, String> myMap = new HashMap<Integer, String>();
+			
+			File file = new File("map.txt");
+            Scanner scannerInput = new Scanner(file);
+            while (scannerInput.hasNextLine()) {
+                String line = scannerInput.nextLine();
+                String[] sp = line.split(" ");
+                myMap.put(Integer.parseInt(sp[0]), sp[1]);
+            }
+            scannerInput.close();
 			Scanner in = new Scanner (System.in);
 			
 			while (true) {
