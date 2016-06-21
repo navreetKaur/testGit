@@ -111,14 +111,7 @@ public class DateUtility {
 		Calendar cal2 = new GregorianCalendar(year1,month1,day1);
 		Calendar dayOne = (Calendar) cal1.clone(),
 	            dayTwo = (Calendar) cal2.clone();
-		
-		 /*SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-		 Date date = sdf.parse("your first date");
-	     cal1.setTime(date);
-	     date = sdf.parse("your second date");
-	     cal2.setTime(date);*/
-		/*long DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
-		return (int) ((cal1.getTime().getTime() - cal2.getTime().getTime())/ DAY_IN_MILLIS);*/
+
 	    if (dayOne.get(Calendar.YEAR) == dayTwo.get(Calendar.YEAR)) {
 	        return Math.abs(dayOne.get(Calendar.DAY_OF_YEAR) - dayTwo.get(Calendar.DAY_OF_YEAR));
 	    } else {
