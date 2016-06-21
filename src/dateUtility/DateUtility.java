@@ -1,5 +1,6 @@
 package dateUtility;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -107,11 +108,17 @@ public class DateUtility {
 	}
 	public static int daysBwDates(int month, int day, int year, int month1, int day1, int year1) {
 		Calendar cal1 = new GregorianCalendar(year,month,day);
-		Calendar cal2 = new GregorianCalendar(year,month,day);
+		Calendar cal2 = new GregorianCalendar(year1,month1,day1);
 		Calendar dayOne = (Calendar) cal1.clone(),
 	            dayTwo = (Calendar) cal2.clone();
-		long DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
-		return ((int) ((cal1.getTime()) - cal2.getTime())/ DAY_IN_MILLIS));
+		
+		 /*SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+		 Date date = sdf.parse("your first date");
+	     cal1.setTime(date);
+	     date = sdf.parse("your second date");
+	     cal2.setTime(date);*/
+		/*long DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
+		return (int) ((cal1.getTime().getTime() - cal2.getTime().getTime())/ DAY_IN_MILLIS);*/
 	    if (dayOne.get(Calendar.YEAR) == dayTwo.get(Calendar.YEAR)) {
 	        return Math.abs(dayOne.get(Calendar.DAY_OF_YEAR) - dayTwo.get(Calendar.DAY_OF_YEAR));
 	    } else {
