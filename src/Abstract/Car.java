@@ -2,7 +2,26 @@ package Abstract;
 
 public final class Car extends Vehicle{
 	private String model;
+	private Person driver = new Driver("Dobby");	
 	
+	
+	
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public Person getDriver() {
+		return driver;
+	}
+
+	public void setDriver(Driver driver) {
+		this.driver = driver;
+	}
+
 	public Car() {
 		model = "Honda Civic";
 	}

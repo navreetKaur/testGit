@@ -1,6 +1,16 @@
 package Abstract;
 
 public final class Boat extends Vehicle{
+	private Person driver = new Captain("Hufflepuff");
+	
+
+	public Person getDriver() {
+		return driver;
+	}
+
+	public void setDriver(Person driver) {
+		this.driver = driver;
+	}
 
 	@Override
 	public String run() {
